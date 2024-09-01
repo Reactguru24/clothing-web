@@ -1,0 +1,109 @@
+.new-Collection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px; /* Equal padding on left */
+    padding-right: 20px; /* Equal padding on right */
+}
+
+.new-Collection h1 {
+    color: rgb(44, 41, 41);
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center; /* Center text */
+}
+
+.new-Collection hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #191818;
+}
+
+.collection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    justify-content: center; /* Center the cards */
+    margin-top: 50px;
+    gap: 20px; /* Gap between cards */
+    padding-left: 20px; /* Equal padding on left */
+    padding-right: 20px; /* Equal padding on right */
+}
+.descriptionbox-nav-box.active {
+    border-bottom: 2px solid #9c2727; /* Active tab indicator color */
+    font-weight: bold;
+  }
+/* Media Queries */
+
+/* For screens 1280px and below */
+@media (max-width: 1280px) {
+    .new-Collection h1 {
+        font-size: 45px;
+    }
+
+    .new-Collection hr {
+        width: 180px;
+    }
+
+    .collection {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+        gap: 20px; /* Maintain gap */
+        justify-content: center; /* Center the cards */
+    }
+}
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+    .new-Collection h1 {
+        font-size: 40px;
+    }
+
+    .new-Collection hr {
+        width: 160px;
+    }
+
+    .collection {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 15px; /* Adjust gap */
+        justify-content: center; /* Center the cards */
+    }
+}
+
+/* For screens 800px and below */
+@media (max-width: 800px) {
+    .new-Collection h1 {
+        font-size: 32px;
+    }
+
+    .new-Collection hr {
+        width: 140px;
+    }
+
+    .collection {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        margin-top: 30px;
+        gap: 15px; /* Maintain gap */
+        justify-content: center; /* Center the cards */
+    }
+}
+
+/* For screens 500px and below */
+@media (max-width: 500px) {
+    .new-Collection h1 {
+        font-size: 28px;
+    }
+
+    .new-Collection hr {
+        width: 120px;
+    }
+
+    .collection {
+        grid-template-columns: 1fr; /* 1 card per row */
+        margin-top: 20px;
+        gap: 10px; /* Reduce gap */
+        padding-left: 10px; /* Adjust padding for smaller screens */
+        padding-right: 10px; /* Adjust padding for smaller screens */
+        justify-content: center; /* Center the cards */
+    }
+}

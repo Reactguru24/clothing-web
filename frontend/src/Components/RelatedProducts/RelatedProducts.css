@@ -1,0 +1,99 @@
+.relatedproducts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: auto; /* Adjust height to fit content */
+    padding: 20px; /* Add padding to ensure space around content */
+}
+
+.relatedproducts h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.relatedproducts hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.relatedproducts-item {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center align items */
+}
+
+/* Media Queries */
+
+/* For screens 1280px and below */
+@media (max-width: 1280px) {
+    .relatedproducts h1 {
+        font-size: 45px;
+    }
+
+    .relatedproducts hr {
+        width: 180px;
+    }
+
+    .relatedproducts-item {
+        gap: 25px;
+    }
+}
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+    .relatedproducts h1 {
+        font-size: 40px;
+    }
+
+    .relatedproducts hr {
+        width: 160px;
+    }
+
+    .relatedproducts-item {
+        gap: 20px;
+    }
+}
+
+/* For screens 800px and below */
+@media (max-width: 800px) {
+    .relatedproducts h1 {
+        font-size: 32px;
+    }
+
+    .relatedproducts hr {
+        width: 140px;
+    }
+
+    .relatedproducts-item {
+        gap: 15px;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        margin-bottom: 30px; /* Add margin at the bottom */
+    }
+}
+
+/* For screens 500px and below */
+@media (max-width: 500px) {
+    .relatedproducts h1 {
+        font-size: 28px;
+    }
+
+    .relatedproducts hr {
+        width: 120px;
+    }
+
+    .relatedproducts-item {
+        display: none; /* Hide all related product items */
+    }
+
+    .relatedproducts-main-image {
+        display: block; /* Show only the main image */
+        width: 100%; /* Adjust width to fit screen */
+        height: auto; /* Maintain aspect ratio */
+    }
+}

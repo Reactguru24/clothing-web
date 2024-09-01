@@ -1,0 +1,38 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  text-align: center; /* Center align text */
+  width: 280px;
+}
+
+
+.item img {
+  display: block; /* Remove default inline spacing */
+  max-width: 100%; /* Ensure image scales within container */
+  height: auto; /* Maintain aspect ratio */
+}
+.item h2{
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.item-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align price texts */
+  gap: 5px; /* Space between new and old price */
+}
+
+.item-price-new {
+  color: #d32f2f; /* Highlight new price */
+  font-size: 18px; /* Adjust font size as needed */
+  font-weight: bold;
+}
+
+.item-price-old {
+  color: #888; /* Gray color for old price */
+  text-decoration: line-through; /* Strike-through old price */
+  font-size: 16px; /* Adjust font size as needed */
+}
+

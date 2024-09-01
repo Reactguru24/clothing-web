@@ -1,0 +1,245 @@
+.cartitems {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-items-message {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    padding: 20px;
+}
+
+.cartitems-format-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.cartitems-format-main p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.cartitems-format {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.carticon-product-icon {
+    width: 50px;
+    height: auto;
+}
+
+.cartitems-format p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.cartitems-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+    border: 1px solid #ddd;
+    color: #333;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.remove-icon {
+    cursor: pointer;
+    width: 20px;
+    height: auto;
+}
+
+.cartitems-down {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartitems-total {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 500px; /* Reduced maximum width */
+}
+
+.cartitems-total-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.cartitems-total-item p {
+    margin: 0;
+}
+
+.cartitems-total-item h3 {
+    margin: 0;
+}
+
+.cartitems-promocode {
+    flex: 1;
+    margin-top: 20px;
+    max-width: 500px; /* Reduced maximum width */
+}
+
+.cartitems-promocode p {
+    margin-bottom: 10px;
+}
+
+.cartitems-promobox {
+    display: flex;
+    align-items: center;
+}
+
+.cartitems-promobox input {
+    padding: 6px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 12px; /* Reduced font size */
+    width: 100%; /* Takes up remaining space */
+    max-width: 150px; /* Maximum width for input */
+}
+
+.cartitems-promobox button {
+    padding: 6px 12px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 100px; /* Maintains button size */
+}
+
+.cartitems-promobox button:hover {
+    background-color: #333;
+}
+
+.cartitems-total button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #d32f2f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cartitems-total button:hover {
+    background-color: #b71c1c;
+}
+
+/* Media Queries */
+
+/* For screens 1280px and below */
+@media (max-width: 1280px) {
+    .cartitems-format-main {
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    }
+
+    .cartitems-format {
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    }
+
+    .cartitems-total,
+    .cartitems-promocode {
+        max-width: 450px;
+    }
+
+    .cartitems-promobox input {
+        max-width: 130px;
+    }
+}
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+    .cartitems-format-main {
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+    }
+
+    .cartitems-format {
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+    }
+
+    .cartitems-total,
+    .cartitems-promocode {
+        max-width: 400px;
+    }
+
+    .cartitems-promobox input {
+        max-width: 120px;
+    }
+}
+
+/* For screens 800px and below */
+@media (max-width: 800px) {
+    .cartitems-format-main {
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .cartitems-format {
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .cartitems-total,
+    .cartitems-promocode {
+        max-width: 350px;
+    }
+
+    .cartitems-promobox input {
+        max-width: 100px;
+    }
+
+    .cartitems-quantity {
+        font-size: 14px;
+        width: 35px;
+        height: 25px;
+    }
+}
+
+/* For screens 500px and below */
+@media (max-width: 500px) {
+    .cartitems-format-main {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .cartitems-format {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .cartitems-total,
+    .cartitems-promocode {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .cartitems-promobox input {
+        max-width: 80px;
+    }
+
+    .cartitems-quantity {
+        font-size: 12px;
+        width: 30px;
+        height: 20px;
+    }
+
+    .cartitems-down {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,323 @@
+.productdisplay {
+    display: flex;
+    margin: 0px 170px;
+}
+
+.productdisplay-left {
+    display: flex;
+    gap: 17px;
+}
+
+.productdisplay-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.productdisplay-img-list img {
+    height: 138px; /* Reduced by 15% from 163px */
+    width: auto; /* Maintain aspect ratio */
+    transform: scale(0.85); /* Scale down by 15% */
+}
+
+.productdisplay-main-img {
+    width: 498px; /* Reduced by 15% from 586px */
+    height: 595px; /* Reduced by 15% from 700px */
+}
+
+.productdisplay-right {
+    margin: 0px 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productdisplay-right h1 {
+    color: rgb(58, 55, 55);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.productdisplay-right-star {
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    gap: 5px;
+    color: #1c1c1c;
+}
+
+.productdisplay-right-prices {
+    display: flex;
+    margin: 40px 0px;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.productdisplay-right-price-old {
+    color: grey;
+    text-decoration: line-through;
+}
+
+.productdisplay-right-price-new {
+    color: rgb(211, 28, 28);
+}
+
+.productdisplay-right-size h1 {
+    margin-top: 15px;
+    color: rgb(146, 140, 140);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.productdisplay-sizes {
+    display: flex;
+    flex-wrap: nowrap; /* Keep all buttons in one row */
+    gap: 5px; /* Reduced gap to fit more buttons */
+    margin: 30px 0px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.productdisplay-size-button {
+    background-color: #ccc; /* Gray color */
+    width: 20px; /* Fixed width for buttons */
+    height: 20px; /* Fixed height to maintain square shape */
+    border: none;
+    padding: 0; /* Remove padding to fit button size */
+    font-size: 12px; /* Adjust font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hover effect and animation */
+    color: #333;
+    border-radius: 4px;
+    text-align: center; /* Center text */
+}
+
+.productdisplay-size-button:hover {
+    background-color: #888; /* Darker gray on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.productdisplay-size-button.selected {
+    background-color: #555; /* Darker gray for selected size */
+    color: white; /* White text for selected size */
+}
+
+.productdisplay-right button {
+    padding: 20px 40px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #ff4141;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.productdisplay-right-category {
+    font-weight: 400;
+    font-size: medium;
+}
+
+.productdisplay-right-category span {
+    font-weight: 600 !important;
+}
+.productdisplay-size-checkbox input[type="checkbox"] {
+    margin-right: 6px; /* Space between checkbox and label text */
+    cursor: pointer;
+}
+
+.productdisplay-size-checkbox.selected {
+    background-color: #555; /* Darker gray for selected size */
+    color: white; /* White text for selected size */
+}
+
+.productdisplay-size-checkbox:hover {
+    background-color: #888; /* Darker gray on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+/* Media Queries */
+
+/* For screens 1280px and below */
+@media (max-width: 1280px) {
+    .productdisplay {
+        margin: 0px 100px;
+    }
+
+    .productdisplay-main-img {
+        width: 425px; /* Reduced by 15% from 500px */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .productdisplay-right h1 {
+        font-size: 28px;
+    }
+
+    .productdisplay-sizes {
+        gap: 8px; /* Reduced gap */
+    }
+
+    .productdisplay-right-prices {
+        font-size: 22px;
+    }
+
+    .productdisplay-right-size h1 {
+        font-size: 18px;
+    }
+
+    .productdisplay-right button {
+        width: 180px;
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+}
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+    .productdisplay {
+        margin: 0px 70px;
+    }
+
+    .productdisplay-main-img {
+        width: 340px; /* Reduced by 15% from 400px */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .productdisplay-right h1 {
+        font-size: 26px;
+    }
+
+    .productdisplay-right-prices {
+        font-size: 20px;
+    }
+
+    .productdisplay-sizes {
+        gap: 6px; /* Reduced gap */
+    }
+
+    .productdisplay-right-size h1 {
+        font-size: 16px;
+    }
+
+    .productdisplay-right button {
+        width: 160px;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* For screens 800px and below */
+@media (max-width: 800px) {
+    .productdisplay {
+        flex-direction: column;
+        margin: 0px 30px;
+        align-items: center;
+    }
+
+    .productdisplay-left {
+        margin-bottom: 20px;
+    }
+
+    .productdisplay-img-list img {
+        height: 102px; /* Reduced by 15% from 120px */
+    }
+
+    .productdisplay-main-img {
+        width: 255px; /* Reduced by 15% from 300px */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .productdisplay-right {
+        margin: 20px 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .productdisplay-right h1 {
+        font-size: 24px;
+    }
+
+    .productdisplay-right-prices {
+        font-size: 18px;
+        gap: 20px;
+    }
+
+    .productdisplay-right-size h1 {
+        font-size: 14px;
+    }
+
+    .productdisplay-sizes {
+        gap: 5px; /* Further reduced gap */
+    }
+
+    .productdisplay-right button {
+        width: 140px;
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+/* For screens 500px and below */
+@media (max-width: 500px) {
+    .productdisplay {
+        margin: 0px 10px;
+    }
+
+    .productdisplay-img-list img {
+       display: none;
+    }
+
+    .productdisplay-main-img {
+        width: 255px; /* Reduced by 15% from 300px */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .productdisplay-right h1 {
+        font-size: 20px;
+    }
+
+    .productdisplay-sizes {
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        gap: 5px; /* Adjust gap */
+    }
+
+    .productdisplay-sizes > button {
+        width: 20px; /* Fixed width for buttons */
+        height: 20px; /* Fixed height to maintain square shape */
+        font-size: 10px; /* Adjust font size */
+        padding: 0; /* Remove padding */
+    }
+
+    .productdisplay-right-prices {
+        font-size: 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .productdisplay-right-size h1 {
+        font-size: 12px;
+    }
+
+    .productdisplay-right button {
+        width: 120px;
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+}
+
+.success-message {
+    color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 3s ease-out;
+    position: absolute; /* or relative depending on your layout */
+    top: 10px; /* adjust position as needed */
+    background: green;
+}
+
+.success-message.fade-out {
+    opacity: 0;
+}

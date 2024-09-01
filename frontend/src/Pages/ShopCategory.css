@@ -1,0 +1,153 @@
+.shop-category {
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.shopcategory-banner {
+  display: block;
+  width: 100%;
+}
+
+.shopcategory-indexsort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.shopcategory-sort {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgb(175, 158, 158);
+  border-radius: 7px;
+  padding: 5px 8px;
+}
+
+.shopcategory-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between product cards */
+}
+
+.shopcategory-products .item {
+  flex: 1 1 calc(25% - 20px); /* 4 cards per row minus the gap */
+  box-sizing: border-box;
+}
+
+.shopcategory-indexsort p {
+  font-size: larger;
+  font-weight: 400;
+}
+
+.shopcategory-indexsort p span {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.shopcategory-loadmore button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto;
+  width: 233px;
+  height: 69px;
+  border-radius: 75px;
+  background: rgb(225, 217, 217);
+  color: grey;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+.shopcategory-sort {
+  position: relative;
+  cursor: pointer;
+}
+
+.shopcategory-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.shopcategory-dropdown p {
+  padding: 8px 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.shopcategory-dropdown p:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* Media Queries */
+
+/* For screens 1280px and below */
+@media (max-width: 1280px) {
+  .shopcategory-products .item {
+      flex: 1 1 calc(33.33% - 20px); /* 3 cards per row minus the gap */
+  }
+
+  .shopcategory-loadmore button {
+      width: 200px;
+      height: 60px;
+      font-size: 16px;
+  }
+}
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+  .shopcategory-products .item {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row minus the gap */
+  }
+
+  .shopcategory-loadmore button {
+      width: 180px;
+      height: 50px;
+      font-size: 14px;
+  }
+}
+
+/* For screens 800px and below */
+@media (max-width: 800px) {
+  .shopcategory-products .item {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row minus the gap */
+  }
+
+  .shopcategory-loadmore button {
+      width: 150px;
+      height: 45px;
+      font-size: 14px;
+  }
+}
+
+/* For screens 500px and below */
+@media (max-width: 500px) {
+  .shopcategory-products .item {
+      flex: 1 1 100%; /* 1 card per row */
+  }
+
+  .shopcategory-loadmore button {
+      width: 120px;
+      height: 40px;
+      font-size: 12px;
+  }
+
+  .shopcategory-indexsort {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .shopcategory-loadmore {
+      margin: 50px auto; /* Adjust margin to fit smaller screens */
+  }
+}

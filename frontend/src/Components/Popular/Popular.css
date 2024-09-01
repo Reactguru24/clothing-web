@@ -1,0 +1,140 @@
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: auto; /* Adjust to auto to handle varying content heights */
+    padding: 20px; /* Optional: Add padding for better spacing */
+}
+
+.popular h1 {
+    color: rgb(44, 41, 41);
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 10px; /* Ensure some space below the heading */
+}
+
+.popular hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: rgb(25, 24, 24);
+    margin-bottom: 20px; /* Ensure space below the line */
+}
+
+.popular-item {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Media Queries */
+
+/* For screens 1280px and below */
+@media (max-width: 1280px) {
+    .popular h1 {
+        font-size: 45px;
+    }
+
+    .popular hr {
+        width: 180px;
+    }
+
+    .popular-item {
+        margin-top: 40px;
+        gap: 25px;
+    }
+    .popular h1 {
+        font-size: 40px;
+    }
+
+    .popular hr {
+        width: 160px;
+    }
+
+    .popular-item {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    /* Adjust card size */
+    .popular-item > * {
+        width: calc(25% - 20px); /* Adjust width for cards */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+}
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+    .popular h1 {
+        font-size: 40px;
+    }
+
+    .popular hr {
+        width: 160px;
+    }
+
+    .popular-item {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .popular-item > * {
+        width: calc(50% - 15px); /* 50% width minus gap */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+    
+}
+
+/* For screens 800px and below */
+@media (max-width: 800px) {
+    .popular h1 {
+        font-size: 32px;
+    }
+
+    .popular hr {
+        width: 140px;
+    }
+
+    .popular-item {
+        margin-top: 25px;
+        gap: 15px;
+        /* Ensure cards fit within the container without overlapping */
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* 2 cards per row */
+    .popular-item > * {
+        width: calc(50% - 15px); /* 50% width minus gap */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+}
+
+/* For screens 500px and below */
+@media (max-width: 500px) {
+    .popular h1 {
+        font-size: 28px;
+    }
+
+    .popular hr {
+        width: 120px;
+    }
+
+    .popular-item {
+        margin-top: 20px;
+        gap: 10px;
+        /* Stack cards vertically */
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px; /* Add margin-bottom for spacing */
+    }
+
+    /* Full width for each card */
+    .popular-item > * {
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+}

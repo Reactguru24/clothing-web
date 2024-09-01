@@ -1,0 +1,197 @@
+.newsletter {
+    width: 65%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    padding: 0px 140px;
+    margin-bottom: 150px;
+    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    gap: 30px;
+    margin-top: 100px;
+}
+
+.newsletter h1 {
+    color: rgb(42, 39, 39);
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.newsletter p {
+    color: #454545;
+    font-size: 20px;
+}
+
+.newsletter div {
+    display: flex;
+    align-items: center;
+    background: white;
+    width: 100%;
+    max-width: 730px; /* Maximum width to prevent overflow */
+    height: 70px;
+    border-radius: 80px;
+    border: 1px solid #e3e3e3;
+    padding: 0 20px; /* Padding for internal spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.newsletter input {
+    flex: 1; /* Allow input to grow and shrink */
+    margin-right: 20px; /* Space between input and button */
+    border: none;
+    outline: none;
+    color: #616161;
+    font-family: poppins;
+    font-size: 16px;
+    height: 100%; /* Full height to match container */
+}
+
+.newsletter div button {
+    width: auto; /* Let the button resize naturally */
+    flex-shrink: 0; /* Prevent the button from shrinking too much */
+    height: 100%;
+    border-radius: 80px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 20px; /* Padding for better click area */
+}
+
+/* Media Queries */
+
+/* For screens 1280px and below */
+@media (max-width: 1280px) {
+    .newsletter {
+        width: 80%;
+        padding: 0px 100px;
+        margin-bottom: 120px;
+        margin-top: 80px;
+    }
+
+    .newsletter h1 {
+        font-size: 50px;
+    }
+
+    .newsletter p {
+        font-size: 18px;
+    }
+
+    .newsletter div {
+        max-width: 600px;
+    }
+
+    .newsletter input {
+        font-size: 14px;
+    }
+
+    .newsletter div button {
+        font-size: 14px;
+    }
+}
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+    .newsletter {
+        width: 90%;
+        padding: 0px 60px;
+        margin-bottom: 100px;
+        margin-top: 60px;
+    }
+
+    .newsletter h1 {
+        font-size: 45px;
+    }
+
+    .newsletter p {
+        font-size: 16px;
+    }
+
+    .newsletter div {
+        max-width: 500px;
+    }
+
+    .newsletter input {
+        font-size: 14px;
+    }
+
+    .newsletter div button {
+        font-size: 14px;
+    }
+}
+
+/* For screens 800px and below */
+@media (max-width: 800px) {
+    .newsletter {
+        padding: 0px 20px;
+        margin-bottom: 80px;
+        margin-top: 40px;
+    }
+
+    .newsletter h1 {
+        font-size: 36px;
+    }
+
+    .newsletter p {
+        font-size: 14px;
+    }
+
+    .newsletter div {
+        flex-direction: row; /* Ensure items are in a row */
+        align-items: center;
+        max-width: none; /* Remove max-width to allow full width */
+        height: auto; /* Adjust height to content */
+    }
+
+    .newsletter input {
+        margin-right: 10px; /* Reduced margin for smaller screens */
+        font-size: 14px;
+    }
+
+    .newsletter div button {
+        width: auto; /* Allow button to size naturally */
+        font-size: 14px;
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* For screens 500px and below */
+@media (max-width: 500px) {
+    .newsletter {
+        padding: 0px 10px;
+        margin-bottom: 60px;
+        margin-top: 30px;
+    }
+
+    .newsletter h1 {
+        font-size: 28px;
+    }
+
+    .newsletter p {
+        font-size: 12px;
+    }
+
+    .newsletter div {
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: center;
+        height: auto; /* Adjust height to fit content */
+        width: 100%; /* Full width for better responsiveness */
+        padding: 0; /* Remove padding */
+    }
+
+    .newsletter input {
+        width: 100%; /* Full width for input */
+        margin: 10px 0; /* Adjust margins for spacing */
+        font-size: 12px;
+    }
+
+    .newsletter div button {
+        width: 100%; /* Full width for button */
+        margin: 10px 0; /* Adjust margins for spacing */
+        height: 45px;
+        font-size: 12px;
+        padding: 0; /* Remove padding */
+    }
+}
