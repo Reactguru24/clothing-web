@@ -23,6 +23,7 @@ const ShopContextProvider = (props) => {
   useEffect(() => {
     // Fetch all products
     fetch("http://localhost:4001/allproducts")
+      
       .then((response) => response.json())
       .then((data) => setAllProduct(data))
       .catch((error) => console.error("Error fetching products:", error));

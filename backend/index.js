@@ -71,7 +71,7 @@ const Product = mongoose.model("Product", {
   available: {
     type: Boolean,
     default: true,
-  }s
+  },
   description: {
     type: String,
   },
@@ -84,55 +84,39 @@ const Product = mongoose.model("Product", {
   sizes: [String], // Handle an array of sizes
 });
 
-app.post("/addproduct", async (req, res) => {
-  try {
-    // Fetch all products and determine the next id
-    console.log(req.body);
-    let products = await Product.find({});
-    let id;
-    if (products.length > 0) {
-      let last_product = products[products.length - 1];
-      id = last_product.id + 1;
-    } else {
-      id = 1;
-    }
-
-    // Create a new product object with all fields
-    const newProduct = new Product({
-      id: id,
-      name: req.body.name,
-      image: req.body.image,
-      category: req.body.category,
-      new_price: req.body.new_price,
-      old_price: req.body.old_price,
-      available: req.body.available,
-      description: req.body.description,
-      tag: req.body.tag, // Add the tag field
-      brand: req.body.brand, // Add the brand field
-      sizes: req.body.sizes, // Add the sizes field (expects an array of sizes)
-    });
-
-    console.log(newProduct);
-
-    // Save the product to the database
-    await newProduct.save();
-    console.log("Product saved in database");
-
-    // Return a success response
-    res.json({
-      success: true,
-      name: req.body.name,
-    });
-  } catch (error) {
-    console.error("Error adding product:", error);
-    res.status(500).json({ success: false, message: "Failed to add product." });
-  }
-});
-
 // Creating API for getting all products
 app.get("/allproducts", async (req, res) => {
   let products = await Product.find({});
   res.send(products);
+});
+
+// Creating endpoint to get 4 random products
+app.get("/relatedproducts", async (req, res) => {
+  try {
+    // Fetch all products
+    let products = await Product.find({});
+
+    // Check if there are at least 4 products
+    if (products.length < 4) {
+      return res.status(400).json({
+        success: false,
+        message: "Not enough products to choose from.",
+      });
+    }
+
+    // Shuffle products array to get random products
+    products = products.sort(() => Math.random() - 0.5);
+
+    // Get the first 4 products from the shuffled array
+    const randomProducts = products.slice(0, 4);
+
+    res.json(randomProducts);
+  } catch (error) {
+    console.error("Error fetching related products:", error);
+    res
+      .status(500)
+      .json({ success: false, message: "Failed to fetch related products." });
+  }
 });
 
 // Schema for user model
@@ -277,6 +261,25 @@ app.post("/login", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ success: false, errors: "Server error" });
+  }
+});
+// Creating endpoint to fetch the username of the logged-in user
+app.get("/api/user", fetchUser, async (req, res) => {
+  try {
+    // Fetch the user data using the user ID from the token
+    const user = await User.findById(req.user.id).select("name");
+
+    if (!user) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
+    }
+
+    // Send the username as a response
+    res.json({ success: true, username: user.name });
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 

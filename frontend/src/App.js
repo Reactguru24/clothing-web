@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -6,7 +7,6 @@ import ShopCategory from "./Pages/ShopCategory";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import LoginSignup from "./Pages/LoginSignup";
-import ResetPassword from "./Components/ResetPassword/ResetPassword"; // Import the ResetPassword component
 import Footer from "./Components/Footer/Footer";
 import men_banner from "./Components/Assets/banner_mens.png";
 import women_banner from "./Components/Assets/banner_women.png";
@@ -29,15 +29,11 @@ function App() {
           />
           <Route
             path="/kids"
-            element={<ShopCategory banner={kids_banner} category="kids" />}
+            element={<ShopCategory banner={kids_banner} category="kid" />}
           />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
-          <Route
-            path="/reset-password/:token"
-            element={<ResetPassword />}
-          />{" "}
           {/* Add route for password reset */}
         </Routes>
         <Footer />

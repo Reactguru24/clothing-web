@@ -15,14 +15,15 @@
 }
 
 .productdisplay-img-list img {
-    height: 138px; /* Reduced by 15% from 163px */
+    height: 138px; /* Maintain height of side images */
     width: auto; /* Maintain aspect ratio */
     transform: scale(0.85); /* Scale down by 15% */
 }
 
+/* Main image height for consistency */
 .productdisplay-main-img {
-    width: 498px; /* Reduced by 15% from 586px */
-    height: 595px; /* Reduced by 15% from 700px */
+    width: 498px; /* Adjusted width */
+    height: 595px; /* Maintain initial height */
 }
 
 .productdisplay-right {
@@ -122,6 +123,7 @@
 .productdisplay-right-category span {
     font-weight: 600 !important;
 }
+
 .productdisplay-size-checkbox input[type="checkbox"] {
     margin-right: 6px; /* Space between checkbox and label text */
     cursor: pointer;
@@ -136,76 +138,8 @@
     background-color: #888; /* Darker gray on hover */
     transform: scale(1.05); /* Slightly increase size on hover */
 }
+
 /* Media Queries */
-
-/* For screens 1280px and below */
-@media (max-width: 1280px) {
-    .productdisplay {
-        margin: 0px 100px;
-    }
-
-    .productdisplay-main-img {
-        width: 425px; /* Reduced by 15% from 500px */
-        height: auto; /* Adjust height automatically */
-    }
-
-    .productdisplay-right h1 {
-        font-size: 28px;
-    }
-
-    .productdisplay-sizes {
-        gap: 8px; /* Reduced gap */
-    }
-
-    .productdisplay-right-prices {
-        font-size: 22px;
-    }
-
-    .productdisplay-right-size h1 {
-        font-size: 18px;
-    }
-
-    .productdisplay-right button {
-        width: 180px;
-        font-size: 14px;
-        padding: 15px 30px;
-    }
-}
-
-/* For screens 1024px and below */
-@media (max-width: 1024px) {
-    .productdisplay {
-        margin: 0px 70px;
-    }
-
-    .productdisplay-main-img {
-        width: 340px; /* Reduced by 15% from 400px */
-        height: auto; /* Adjust height automatically */
-    }
-
-    .productdisplay-right h1 {
-        font-size: 26px;
-    }
-
-    .productdisplay-right-prices {
-        font-size: 20px;
-    }
-
-    .productdisplay-sizes {
-        gap: 6px; /* Reduced gap */
-    }
-
-    .productdisplay-right-size h1 {
-        font-size: 16px;
-    }
-
-    .productdisplay-right button {
-        width: 160px;
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-}
-
 /* For screens 800px and below */
 @media (max-width: 800px) {
     .productdisplay {
@@ -218,13 +152,21 @@
         margin-bottom: 20px;
     }
 
+    .productdisplay-img-list {
+        max-height: 595px; /* Maintain the height of the main image */
+        overflow-y: hidden; /* Hide overflowing images */
+    }
+
     .productdisplay-img-list img {
-        height: 102px; /* Reduced by 15% from 120px */
+        height: calc((595px - 16px * 2) / 3); /* Adjust height to fit 3 images and gaps */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure images cover the container area */
     }
 
     .productdisplay-main-img {
-        width: 255px; /* Reduced by 15% from 300px */
-        height: auto; /* Adjust height automatically */
+        width: 300px; /* Increase the width of the main image */
+        height: 595px; /* Maintain height consistency */
+        object-fit: cover; /* Ensure main image covers the container area */
     }
 
     .productdisplay-right {
@@ -257,14 +199,16 @@
     }
 }
 
-/* For screens 500px and below */
+
+/* For screens 500px and below - No changes, keep as it was */
+
 @media (max-width: 500px) {
     .productdisplay {
         margin: 0px 10px;
     }
 
     .productdisplay-img-list img {
-       display: none;
+        display: none; /* Hide all images */
     }
 
     .productdisplay-main-img {

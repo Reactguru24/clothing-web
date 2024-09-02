@@ -9,9 +9,11 @@ function ShopCategory(props) {
 
   // Filter products based on the category prop
   const filteredProducts = allProduct.filter(item => item.category === props.category);
+ 
+
 
   // State to manage the number of visible products
-  const [visibleCount, setVisibleCount] = useState(10);
+  const [visibleCount, setVisibleCount] = useState(8);
   // State to manage dropdown visibility and sorting
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [sortOption, setSortOption] = useState('default');
